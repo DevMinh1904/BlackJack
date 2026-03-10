@@ -2,6 +2,13 @@
 
 A simple and fun Blackjack game built for Android using Kotlin and XML with ViewBinding.
 
+## 📲 Download APK
+You can download the latest pre-compiled version of the game directly to your Android device:
+
+**[Download BlackJack.apk](https://github.com/YOUR_USERNAME/BlackJack/releases/latest)**
+
+*(Note: After downloading, you may need to allow "Installation from Unknown Sources" in your Android settings to install the app.)*
+
 ## Features
 * **Standard Blackjack Rules:** Hit, Check (Stand), and Dealer AI that stands on 17.
 * **Score Tracking:** Keeps track of your wins, losses, and ties during the session.
@@ -9,19 +16,16 @@ A simple and fun Blackjack game built for Android using Kotlin and XML with View
 * **Modern UI:** Clean and responsive design with custom drawable resources.
 * **Five-Card Charlie:** Special rule where drawing 5 cards without busting results in an automatic win.
 
-## How to Download and Run
+## How to Build from Source
 
-There are two ways to get this project onto your machine:
+If you want to modify the game or build it yourself:
 
 ### Option 1: Clone the Repository (Recommended)
-This method allows you to stay updated with any future changes.
-
 1.  **Install Git:** Ensure you have [Git](https://git-scm.com/) installed on your computer.
 2.  **Clone:** Open your terminal or command prompt and run:
     ```bash
     git clone https://github.com/YOUR_USERNAME/BlackJack.git
     ```
-    *(Note: Replace `YOUR_USERNAME` with your actual GitHub username if you have uploaded it.)*
 3.  **Open in Android Studio:**
     *   Launch Android Studio.
     *   Go to **File > Open**.
@@ -31,8 +35,7 @@ This method allows you to stay updated with any future changes.
 ### Option 2: Download as ZIP
 1.  Go to the repository page on GitHub.
 2.  Click the green **Code** button and select **Download ZIP**.
-3.  Extract the ZIP file to a location on your computer.
-4.  Open the extracted folder in Android Studio as described in Option 1.
+3.  Extract the ZIP file and open the folder in Android Studio.
 
 ## Prerequisites
 * Android Studio Iguana (or newer)
