@@ -5,7 +5,7 @@ A simple and fun Blackjack game built for Android using Kotlin and XML with View
 ## 📲 Download APK
 You can download the latest pre-compiled version of the game directly to your Android device:
 
-**[Download BlackJack.apk](https://github.com/YOUR_USERNAME/BlackJack/releases/latest)**
+**[Download BlackJack.apk](https://github.com/DevMinh1904/BlackJack/releases/latest)**
 
 *(Note: After downloading, you may need to allow "Installation from Unknown Sources" in your Android settings to install the app.)*
 
