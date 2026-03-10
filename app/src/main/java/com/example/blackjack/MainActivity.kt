@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         val card = game.drawCard()
         game.dealerHand.add(card)
         addCardToUi(card, binding.dealerCardContainer, isHidden, onComplete)
-        if (!isHidden) updateScores()
+        updateScores()
     }
 
     private fun addCardToUi(card: Card, container: FrameLayout, isHidden: Boolean, onComplete: (() -> Unit)?) {
@@ -132,8 +132,8 @@ class MainActivity : AppCompatActivity() {
         container.addView(cardView)
         
         val count = container.childCount
-        // Increased from 72f to 95f to separate cards more horizontally
-        val offset = 95f * (count - 1)
+        // Increased from 95f to 125f to separate cards more horizontally so 10 is visible
+        val offset = 125f * (count - 1)
         cardView.translationX = 1000f
         cardView.translationY = -1000f
 
@@ -162,7 +162,12 @@ class MainActivity : AppCompatActivity() {
         } else {
              if (game.dealerHand.isNotEmpty()) {
                  binding.tvDealerScore.visibility = View.VISIBLE
-                 binding.tvDealerScore.text = "?"
+                 // Only count the visible cards for the dealer
+                 val visibleCards = game.dealerHand.filterIndexed { index, _ -> 
+                     // Assuming index 1 is the hidden card during the round
+                     index != 1 || binding.btnNewGame.isVisible
+                 }
+                 binding.tvDealerScore.text = game.calculateScore(ArrayList(visibleCards)).toString()
              }
         }
         
