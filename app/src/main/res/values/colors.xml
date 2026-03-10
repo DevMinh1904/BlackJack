@@ -8,10 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Table color and Status box color both match the image provided -->
+    <!-- Table color and Status box color -->
     <color name="blackjack_bg">#4CAF50</color>
     <color name="blackjack_container">#1B5E20</color>
-    <color name="blackjack_status_bg">#1B5E20</color>
+    <color name="blackjack_status_bg_dark">#144517</color> <!-- Darkened from #1B5E20 -->
     <color name="hit_blue">#2196F3</color>
     <color name="check_green">#00C853</color>
 
