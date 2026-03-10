@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Table color and Status box color both match the image provided -->
+    <color name="blackjack_bg">#4CAF50</color>
+    <color name="blackjack_container">#1B5E20</color>
+    <color name="blackjack_status_bg">#1B5E20</color>
+    <color name="hit_blue">#2196F3</color>
+    <color name="check_green">#00C853</color>
+
+    <!-- Vibrant Scoreboard colors -->
+    <color name="win_green_light">#00E676</color>
+    <color name="loss_red_pure">#FF1744</color>
+    <color name="tie_yellow_dark">#FFEA00</color>
+
+    <color name="win_green">#2ECC71</color>
+    <color name="loss_red">#E74C3C</color>
+    <color name="tie_yellow">#F1C40F</color>
+</resources>
