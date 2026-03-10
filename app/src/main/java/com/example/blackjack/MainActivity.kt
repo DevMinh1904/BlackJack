@@ -123,7 +123,6 @@ class MainActivity : AppCompatActivity() {
 
         cardBinding.cardBack.isVisible = isHidden
         if (isHidden) {
-            // Removed hardcoded background color to show the drawable pattern
             val text = cardBinding.tvSuitCenter
             text.text = "?"
             text.setTextColor(Color.parseColor("#4A627A"))
@@ -133,7 +132,8 @@ class MainActivity : AppCompatActivity() {
         container.addView(cardView)
         
         val count = container.childCount
-        val offset = 72f * (count - 1)
+        // Increased from 72f to 95f to separate cards more horizontally
+        val offset = 95f * (count - 1)
         cardView.translationX = 1000f
         cardView.translationY = -1000f
 
