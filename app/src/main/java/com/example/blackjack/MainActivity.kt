@@ -4,13 +4,19 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import android.view.WindowInsets
+import android.view.WindowInsetsController
 import android.widget.FrameLayout
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
 import com.example.blackjack.databinding.ActivityMainBinding
 import com.example.blackjack.databinding.ItemCardBinding
@@ -23,11 +29,29 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Enable Edge-to-Edge
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        hideSystemUI()
+        
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setupListeners()
         startNewGame()
+    }
+
+    private fun hideSystemUI() {
+        val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
+        windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            hideSystemUI()
+        }
     }
 
     private fun setupListeners() {
@@ -132,7 +156,6 @@ class MainActivity : AppCompatActivity() {
         container.addView(cardView)
         
         val count = container.childCount
-        // Increased from 95f to 125f to separate cards more horizontally so 10 is visible
         val offset = 125f * (count - 1)
         cardView.translationX = 1000f
         cardView.translationY = -1000f
@@ -162,9 +185,7 @@ class MainActivity : AppCompatActivity() {
         } else {
              if (game.dealerHand.isNotEmpty()) {
                  binding.tvDealerScore.visibility = View.VISIBLE
-                 // Only count the visible cards for the dealer
                  val visibleCards = game.dealerHand.filterIndexed { index, _ -> 
-                     // Assuming index 1 is the hidden card during the round
                      index != 1 || binding.btnNewGame.isVisible
                  }
                  binding.tvDealerScore.text = game.calculateScore(ArrayList(visibleCards)).toString()
